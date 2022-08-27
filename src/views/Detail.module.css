@@ -1,0 +1,21 @@
+.container{
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img{
+    width:30%;
+    padding:1em;
+    margin-bottom:2em;
+    border-radius:0.5em;
+    background-color: #506266;
+}
+.img > img{
+    border-radius:0.5em;
+}
+.name{
+    color:#EB5757;
+    font-weight:600;
+}
