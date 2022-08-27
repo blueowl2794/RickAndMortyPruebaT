@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 const Info = ({infos}) => {
   const [search, setSearch] = useState('')
   const dispatch = useDispatch();
-  const vivas = infos.filter(info => info.status ==="Alive")
-  const muertas = infos.filter(info => info.status ==="Dead")
+  const vivas = infos?infos.filter(info => info.status ==="Alive"):null
+  const muertas = infos?infos.filter(info => info.status ==="Dead"):null
   // console.log("vivas",vivas)
   // console.log("muertas",muertas)
 
@@ -29,16 +29,16 @@ const Info = ({infos}) => {
       </div>
       <div className={styles.subInfo}>
         <div className={styles.divUno}>
-          <p>Total de personajes <b>{infos.length}</b> </p>
+          <p>Total de personajes <b>{infos?infos.length:0}</b> </p>
         </div>
         <div className={styles.divDos}>
-          <p> <img src={require('../img/Icono de vivo.png')} alt="Vivo" /> Personajes Vivos  <b>{vivas.length}</b> </p> |
-          <p> <img src={require('../img/Icono de muerto.png')} alt="Muerto" /> Personajes Muertos <b>{muertas.length}</b> </p>
+          <p> <img src={require('../img/Icono de vivo.png')} alt="Vivo" /> Personajes Vivos  <b>{vivas?vivas.length:0}</b> </p> |
+          <p> <img src={require('../img/Icono de muerto.png')} alt="Muerto" /> Personajes Muertos <b>{muertas?muertas.length:0}</b> </p>
         </div>
         <div >
           <form onSubmit={onSubmit} className={styles.divTres}>
-            <img src={require('../img/Icono de busqueda.png')} alt="Icono" onSubmit={onSubmit}/>
-            <input type="text" placeholder='Buscar' onChange={onInputChange}/>
+            <img src={require('../img/Icono de busqueda.png')} alt="Icono" onClick={onSubmit}/>
+            <input type="text" placeholder='Buscar' onChange={onInputChange} />
           </form>
         </div>
       </div>

@@ -31,7 +31,17 @@ const Table = ({infos}) => {
               <td>{a.created.slice(0,10)}</td>
               <td><Link to={`/${a.id}/`}> <img src={require('../img/Icono imagen.png')} alt="img" /> Acciones</Link></td>
             </tr>
-          )):null
+          )):<tr>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+          <td>No existe</td>
+        </tr>
         }
         
       </table>
